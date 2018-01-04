@@ -7,7 +7,6 @@ atom-runner@2.7.1
 auto-encoding@0.7.0
 autocomplete-emojis@2.5.0
 autocomplete-paths@2.12.1
-autocomplete-plus@2.40.0
 busy-signal@1.4.3
 color-picker@2.2.5
 compare-files@0.8.1
@@ -41,7 +40,6 @@ minimap-highlight-selected@4.6.1
 monokai@0.24.0
 move-cursor-improved@0.3.4
 multi-cursor@2.1.5
-my-package@0.0.0
 open-in-browser@0.5.2
 pigments@0.40.2
 prettier-atom@0.45.0
