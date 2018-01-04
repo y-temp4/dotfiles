@@ -18,4 +18,7 @@ ln -sf ${PWD}/.atom/styles.less   ~/.atom/styles.less
 [[ ! -d ~/Library/Application\ Support/Code ]] && mkdir -p ~/Library/Application\ Support/Code/User
 ln -sf ${PWD}/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
+[[ ! -d ~/.bundle ]] && mkdir ~/.bundle
+ln -sf ${PWD}/.bundle/config   ~/.bundle/config
+
 echo 'complete setting!'
