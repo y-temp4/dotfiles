@@ -1,0 +1,198 @@
+"*":
+  "Sublime-Style-Column-Selection": {}
+  "atom-beautify":
+    css:
+      indent_comments: false
+      indent_size: 2
+      newline_between_rules: true
+    general:
+      _analyticsUserId: "f2c5c45a-b13e-4dcf-a478-7f77e25a3bb4"
+    html:
+      indent_size: 2
+    js:
+      indent_size: 2
+    json:
+      indent_size: 2
+    jsx:
+      indent_size: 2
+  "atom-runner":
+    paneSplitDirection: "Up"
+  "auto-encoding":
+    disallowEncTypes: "iso88592, windows1252"
+  "autocomplete-paths":
+    ignoreSubmodules: true
+  "autocomplete-plus": {}
+  "autocomplete-ruby":
+    rsensePath: "/Users/yuki/.anyenv/envs/rbenv/shims/rsense"
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "terminal-panel"
+      "default-encoding"
+      "script"
+      "sync-settings"
+      "autocomplete-ruby"
+      "term3"
+      "ide-typescript"
+      "nuclide"
+    ]
+    packagesWithKeymapsDisabled: [
+      "terminal-plus"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+  editor:
+    fontFamily: "Ricty"
+    fontSize: 16
+    invisibles:
+      eol: " "
+    lineHeight: 1.2
+    preferredLineLength: 78
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+  emmet: {}
+  "exception-reporting":
+    userId: "0be3604c-2bed-c854-182d-e8735a1052d3"
+  "file-icons": {}
+  "flow-ide": {}
+  "git-plus":
+    general:
+      _analyticsUserId: "8fbeb415-f6ed-40c4-859b-85fb13db72ef"
+  "hatena-blog-and-fotolife":
+    apiKey: "pd7hxc3jq5"
+    blogId: "y-temp4.hatenablog.com"
+    hatenaId: "y_temp4"
+  "ide-typescript": {}
+  jumpy:
+    useHomingBeaconEffectOnJumps: false
+  linter: {}
+  "linter-eslint": {}
+  "linter-rubocop":
+    command: "/Users/yuki/.anyenv/envs/rbenv/versions/2.3.1/bin/rubocop"
+    disableWhenNoConfigFile: true
+  "linter-ui-default":
+    panelHeight: 217
+  minimap:
+    charHeight: 3
+    charWidth: 2
+    devicePixelRatioRounding: false
+    plugins:
+      "git-diff": false
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  nuclide:
+    "nuclide-flow":
+      canUseFlowBin: true
+  "one-dark-ui": {}
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNotInPackageJson: true
+    useEslint: true
+  react:
+    enabledForAllJavascriptFiles: true
+  "sync-settings": {}
+  term3:
+    colors:
+      normalBlue: "#2176c7"
+      normalCyan: "#66d9ef"
+      normalGreen: "#a6e22e"
+    cursorBlink: false
+    fontSize: "14"
+  "terminal-panel":
+    clearCommandInput: false
+    overrideLs: false
+  "terminal-plus":
+    core: {}
+    style: {}
+  "tree-view": {}
+  welcome:
+    showOnStartup: false
+  whitespace: {}
+".basic.html.text":
+  editor:
+    preferredLineLength: 78
+".coffee.jsx.source":
+  editor:
+    preferredLineLength: 78
+".coffee.source":
+  editor:
+    preferredLineLength: 78
+    tabLength: 2
+".css.source":
+  editor:
+    tabLength: 2
+".diff.source":
+  editor:
+    preferredLineLength: 78
+".erb.html.text":
+  editor:
+    tabLength: 2
+".html.php.text":
+  editor:
+    preferredLineLength: 78
+    tabLength: 2
+".html.riot.text":
+  editor:
+    preferredLineLength: 78
+".html.ruby.text":
+  editor:
+    showIndentGuide: true
+    tabLength: 2
+".jade.source":
+  editor:
+    preferredLineLength: 78
+    tabLength: 2
+".js.jsx.source":
+  editor:
+    preferredLineLength: 78
+".js.regexp.replacement.source":
+  editor:
+    preferredLineLength: 78
+".js.regexp.source":
+  editor:
+    preferredLineLength: 78
+".js.source":
+  editor:
+    preferredLineLength: 78
+".json.source":
+  editor:
+    tabLength: 2
+".litcoffee.source":
+  editor:
+    preferredLineLength: 78
+".pyjade.source":
+  editor:
+    preferredLineLength: 78
+".rails.ruby.source":
+  editor:
+    tabLength: 2
+".reason.source":
+  editor:
+    preferredLineLength: 110
+".riot.source":
+  editor:
+    preferredLineLength: 78
+".ruby.source":
+  editor:
+    tabLength: 2
+".slim.text":
+  editor:
+    preferredLineLength: 78
+    tabLength: 2

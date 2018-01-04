@@ -1,0 +1,34 @@
+{
+    "window.zoomLevel": 0,
+    "editor.fontSize": 14,
+    "workbench.startupEditor": "newUntitledFile",
+    "[javascript]": {
+        "editor.tabSize": 2
+    },
+    "[javascriptreact]": {
+        "editor.tabSize": 2
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "Monokai",
+    "atomKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "editor.renderWhitespace": "all",
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/vendor/bundle": true,
+        "**/tmp/cache": true
+    },
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact",
+        "vue-html": "html"
+    },
+    "emmet.syntaxProfiles": {
+        "html": {
+            "attr_quotes": "single"
+        },
+        "jsx": {
+            "self_closing_tag": true
+        }
+    }
+}

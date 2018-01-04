@@ -1,0 +1,45 @@
+[user]
+  email = y.temp4@gmail.com
+  name = y-temp4
+[core]
+  excludesfile = /Users/yuki/.gitignore_global
+[color]
+  ui = auto
+[push]
+  default = simple
+[alias]
+  aa = add -A
+  ad = add
+  b = branch -a
+  ci = commit
+  cl = clone
+  co = checkout
+  d = diff
+  f = fetch --prune
+  l = log
+  lo = log --oneline
+  lp = log -p
+  ls = log --stat
+  me = !"git config user.name"
+  pl = pull
+  ps = push
+  s = status
+  st = stash
+  stl = stash list
+  stp = stash pop
+[credential "https://bitbucket.org"]
+  helper = osxkeychain
+[credential "https://gitlab.com"]
+  helper = osxkeychain
+[credential "https://github.com"]
+  helper = osxkeychain
+[credential "https://github.com"]
+  username = y-temp4
+[ghq]
+  root = ~/.ghq
+  root = ~/.go/src
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
