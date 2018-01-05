@@ -126,6 +126,7 @@ alias gcu='git config user.name "y-temp4" && git config user.email "y.temp4@gmai
 alias gs='git status --short --branch'
 alias ga='git add'
 alias gaa='git add --all'
+alias gci='git commit'
 alias d='git diff'
 alias m='git checkout master'
 
