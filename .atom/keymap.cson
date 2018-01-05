@@ -26,3 +26,5 @@
 
 'atom-text-editor:not([mini])':
   'ctrl-shift-alt-M': 'emmet:merge-lines'
+  'ctrl-shift-E': 'emmet:expand-abbreviation'
+  'ctrl-e': 'editor:move-to-end-of-screen-line'
