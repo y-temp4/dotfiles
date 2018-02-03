@@ -57,7 +57,7 @@
     ]
   editor:
     fontFamily: "Ricty"
-    fontSize: 16
+    fontSize: 15
     invisibles:
       eol: " "
     lineHeight: 1.2

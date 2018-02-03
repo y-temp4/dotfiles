@@ -1,11 +1,16 @@
 {
     "window.zoomLevel": 0,
-    "editor.fontSize": 14,
+    "editor.fontSize": 13,
+    "editor.formatOnSave": true,
+    "prettier.eslintIntegration": true,
     "workbench.startupEditor": "newUntitledFile",
     "[javascript]": {
         "editor.tabSize": 2
     },
     "[javascriptreact]": {
+        "editor.tabSize": 2
+    },
+    "[vue]": {
         "editor.tabSize": 2
     },
     "workbench.iconTheme": "vscode-icons",
