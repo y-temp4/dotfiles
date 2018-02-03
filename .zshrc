@@ -117,6 +117,8 @@ alias vst='vagrant status'
 alias b='bundle'
 alias be='bundle exec'
 
+alias y='yarn'
+
 alias s='subl .'
 alias a='atom .'
 
