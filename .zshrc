@@ -121,6 +121,7 @@ alias y='yarn'
 
 alias s='subl .'
 alias a='atom .'
+alias c='code .'
 
 alias g='git'
 alias gi='git'
