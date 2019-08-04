@@ -10,8 +10,13 @@ HISTFILE=~/.zsh_history
 HISTSIZE=1000000
 SAVEHIST=1000000
 
+# show virtualenv
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+
 # 2 line prompt
-PROMPT="%{${fg[green]}%}%n@%m %{${fg[blue]}[%D{%Y/%m/%d %T}]%{${reset_color}%} ${vcs_info_msg_0_}%~
+PROMPT="$(virtualenv_info)%{${fg[green]}%}%n@%m %{${fg[blue]}[%D{%Y/%m/%d %T}]%{${reset_color}%} ${vcs_info_msg_0_}%~
 %# "
 
 # vcs_info
@@ -23,10 +28,18 @@ zstyle ':vcs_info:*' actionformats '%F{red}[%b|%a] %f'
 
 function _update_vcs_info_msg() {
     LANG=en_US.UTF-8 vcs_info
-    PROMPT="%{${fg[green]}%}%n@%m%{${reset_color}%} ${vcs_info_msg_0_}%~
+    PROMPT="$(virtualenv_info)%{${fg[green]}%}%n@%m%{${reset_color}%} ${vcs_info_msg_0_}%~
 %# "
 }
 add-zsh-hook precmd _update_vcs_info_msg
+
+RPROMPT='[%D{%Y/%m/%d %H:%M:%S}]'
+
+TMOUT=1
+
+TRAPALRM() {
+    zle reset-prompt
+}
 
 autoload -Uz select-word-style
 select-word-style default
@@ -157,6 +170,9 @@ alias grep='grep --color'
 alias -g L='| less'
 alias -g G='| grep'
 
+# For hub
+function git(){hub "$@"}
+
 # Use rmtrash
 alias rm='rmtrash'
 
@@ -236,3 +252,10 @@ zle -N peco-find
 # bind keys
 # bindkey '^f' peco-find
 bindkey '^x' peco-find
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
