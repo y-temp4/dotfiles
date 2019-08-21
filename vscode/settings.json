@@ -1,39 +1,74 @@
 {
-    "window.zoomLevel": 0,
-    "editor.fontSize": 13,
-    "editor.formatOnSave": true,
-    "prettier.eslintIntegration": true,
-    "workbench.startupEditor": "newUntitledFile",
-    "[javascript]": {
-        "editor.tabSize": 2
+  "window.zoomLevel": 0,
+  "editor.formatOnSave": true,
+  "prettier.stylelintIntegration": true,
+  "prettier.eslintIntegration": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[vue]": {
+    "editor.tabSize": 2,
+    "togglequotes.chars": [
+      "\"",
+      "'",
+      "`"
+    ]
+  },
+  "[ruby]": {
+    "editor.tabSize": 2
+  },
+  "[slim]": {
+    "editor.tabSize": 2
+  },
+  "atomKeymap.promptV3Features": true,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.formatOnPaste": true,
+  "editor.renderWhitespace": "all",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/vendor/bundle": true,
+    "**/tmp/cache": true
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "vue-html": "html"
+  },
+  "emmet.syntaxProfiles": {
+    "html": {
+      "attr_quotes": "double"
     },
-    "[javascriptreact]": {
-        "editor.tabSize": 2
+    "jsx": {
+      "self_closing_tag": true
     },
-    "[vue]": {
-        "editor.tabSize": 2
-    },
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "Monokai",
-    "atomKeymap.promptV3Features": true,
-    "editor.multiCursorModifier": "ctrlCmd",
-    "editor.formatOnPaste": true,
-    "editor.renderWhitespace": "all",
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/vendor/bundle": true,
-        "**/tmp/cache": true
-    },
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact",
-        "vue-html": "html"
-    },
-    "emmet.syntaxProfiles": {
-        "html": {
-            "attr_quotes": "single"
-        },
-        "jsx": {
-            "self_closing_tag": true
-        }
-    }
+    "vue": "css"
+  },
+  "files.insertFinalNewline": true,
+  "[solidity]": {},
+  "files.associations": {
+    "*.css": "postcss",
+  },
+  "javascript.validate.enable": false,
+  "workbench.colorTheme": "Monokai",
+  "todohighlight.isEnable": true,
+  "todohighlight.include": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.html",
+    "**/*.php",
+    "**/*.css",
+    "**/*.scss",
+    "**/*.vue"
+  ],
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "workbench.iconTheme": "vscode-icons",
+  "python.jediEnabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "vsicons.dontShowNewVersionMessage": true,
 }

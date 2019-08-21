@@ -1,6 +1,6 @@
 [user]
   email = y.temp4@gmail.com
-  name = y-temp4
+	name = y-temp4
 [core]
   excludesfile = /Users/yuki/.gitignore_global
 [color]
@@ -29,12 +29,14 @@
   st = stash
   stl = stash list
   stp = stash pop
+  see = !hub browse -- pull/$(git symbolic-ref --short HEAD)
+  psu = !git push --set-upstream origin $(git symbolic-ref --short HEAD)
 [credential "https://bitbucket.org"]
   helper = osxkeychain
 [credential "https://gitlab.com"]
   helper = osxkeychain
-[credential "https://github.com"]
-  helper = osxkeychain
+# [credential "https://github.com"]
+#  helper = osxkeychain
 [credential "https://github.com"]
   username = y-temp4
 [ghq]
@@ -45,3 +47,12 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[credential]
+  helper = osxkeychain
+[secrets]
+	providers = git secrets --aws-provider
+	patterns = [A-Z0-9]{20}
+	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+	allowed = AKIAIOSFODNN7EXAMPLE
+	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
