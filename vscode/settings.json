@@ -1,27 +1,43 @@
 {
   "window.zoomLevel": 0,
-  "editor.formatOnSave": true,
-  "prettier.stylelintIntegration": true,
-  "prettier.eslintIntegration": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
   "workbench.startupEditor": "newUntitledFile",
+  "css.validate": false,
+  "scss.validate": false,
+  "[css]": {
+    "editor.formatOnSave": false
+  },
+  "[scss]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false
+  },
   "[javascript]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascriptreact]": {
     "editor.tabSize": 2
   },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  },
   "[vue]": {
     "editor.tabSize": 2,
-    "togglequotes.chars": [
-      "\"",
-      "'",
-      "`"
-    ]
+    "togglequotes.chars": ["\"", "'", "`"],
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[ruby]": {
     "editor.tabSize": 2
   },
   "[slim]": {
+    "editor.tabSize": 2
+  },
+  "[erb]": {
     "editor.tabSize": 2
   },
   "atomKeymap.promptV3Features": true,
@@ -35,7 +51,8 @@
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
-    "vue-html": "html"
+    "vue-html": "html",
+    "erb": "html"
   },
   "emmet.syntaxProfiles": {
     "html": {
@@ -49,10 +66,9 @@
   "files.insertFinalNewline": true,
   "[solidity]": {},
   "files.associations": {
-    "*.css": "postcss",
+    "*.css": "postcss"
   },
   "javascript.validate.enable": false,
-  "workbench.colorTheme": "Monokai",
   "todohighlight.isEnable": true,
   "todohighlight.include": [
     "**/*.js",
@@ -67,8 +83,40 @@
   ],
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "workbench.iconTheme": "vscode-icons",
   "python.jediEnabled": false,
   "explorer.confirmDragAndDrop": false,
   "vsicons.dontShowNewVersionMessage": true,
+  "change-case.js": ["snake_case", "camelCase", "PascalCase", "CONST_CASE"],
+  "change-case.ts": ["snake_case", "camelCase", "PascalCase", "CONST_CASE"],
+  "change-case.vue": [
+    "snake_case",
+    "camelCase",
+    "PascalCase",
+    "CONST_CASE",
+    "param-case"
+  ],
+  "editor.rulers": [80, 100],
+  "terminal.integrated.fontFamily": "Ricty",
+  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontWeight": "bold",
+  "vetur.experimental.templateInterpolationService": true,
+  "liveshare.featureSet": "insiders",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "vetur.useWorkspaceDependencies": true,
+  "stylelint.autoFix": true,
+  "postfix.languages": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue"
+  ],
+  "workbench.sideBar.location": "left",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Monokai",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.editor.focusRecentEditorAfterClose": false,
+  "tabnine.experimentalAutoImports": true,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "editor.formatOnSave": true
 }

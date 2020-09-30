@@ -7,6 +7,8 @@
   ui = auto
 [push]
   default = simple
+[pull]
+  rebase = false
 [fetch]
   prune = true
 [alias]
@@ -14,6 +16,9 @@
   ad = add
   b = branch -a
   ci = commit
+  cm = commit -m
+  cnm = commit -nm
+  cmn = commit -nm
   cl = clone
   co = checkout
   d = diff
@@ -31,6 +36,11 @@
   stp = stash pop
   see = !hub browse -- pull/$(git symbolic-ref --short HEAD)
   psu = !git push --set-upstream origin $(git symbolic-ref --short HEAD)
+  psus = !git psu && git see
+[pager]
+  log = diff-highlight | less
+  show = diff-highlight | less
+  diff = diff-highlight | less
 [credential "https://bitbucket.org"]
   helper = osxkeychain
 [credential "https://gitlab.com"]
@@ -40,8 +50,8 @@
 [credential "https://github.com"]
   username = y-temp4
 [ghq]
-  root = ~/.ghq
   root = ~/.go/src
+  root = ~/.ghq
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
@@ -50,9 +60,9 @@
 [credential]
   helper = osxkeychain
 [secrets]
-	providers = git secrets --aws-provider
-	patterns = [A-Z0-9]{20}
-	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
-	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
-	allowed = AKIAIOSFODNN7EXAMPLE
-	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+  providers = git secrets --aws-provider
+  patterns = [A-Z0-9]{20}
+  patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+  patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+  allowed = AKIAIOSFODNN7EXAMPLE
+  allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY

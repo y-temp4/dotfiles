@@ -42,14 +42,20 @@ export MECAB_PATH=/usr/local/Cellar/mecab/0.996/lib/libmecab.dylib
 # for postgresql
 export PATH=/usr/local/opt/postgresql@9.6/bin:$PATH
 
+# for mysql
+export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
+
 # for Flutter
 export PATH=$HOME/Src/framework/flutter/flutter/bin:$PATH
 
 # for python
 export PYTHONSTARTUP=~/.pythonrc.py
 
-# for mysql
-export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
-
 # for qt
 export PATH=/usr/local/opt/qt/bin:$PATH
+
+# for gh
+eval "$(gh completion -s zsh)"
+
+# for rust
+export PATH=$HOME/.cargo/bin:$PATH
