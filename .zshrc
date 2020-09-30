@@ -17,7 +17,7 @@ function virtualenv_info {
 
 # 2 line prompt
 PROMPT="$(virtualenv_info)%{${fg[green]}%}%n@%m %{${fg[blue]}[%D{%Y/%m/%d %T}]%{${reset_color}%} ${vcs_info_msg_0_}%~
-%# "
+\$ "
 
 # vcs_info
 autoload -Uz vcs_info
@@ -29,7 +29,7 @@ zstyle ':vcs_info:*' actionformats '%F{red}[%b|%a] %f'
 function _update_vcs_info_msg() {
     LANG=en_US.UTF-8 vcs_info
     PROMPT="$(virtualenv_info)%{${fg[green]}%}%n@%m%{${reset_color}%} ${vcs_info_msg_0_}%~
-%# "
+\$ "
     RPROMPT='[%D{%Y/%m/%d %H:%M}]'
 }
 add-zsh-hook precmd _update_vcs_info_msg
@@ -147,9 +147,9 @@ setopt nonomatch
 ########################################
 # Alias
 
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ls -a'
-alias lla='ls -la'
+alias lla='ls -lah'
 
 alias f="open ."
 
@@ -162,10 +162,13 @@ alias vst='vagrant status'
 alias b='bundle'
 alias be='bundle exec'
 
+alias dc='docker-compose'
+
 alias y='yarn'
 alias ya='yarn add'
 alias yad='yarn add -D'
 alias yr='yarn remove'
+alias yu='yarn run'
 
 alias n='npm'
 alias nr='npm run'
@@ -174,7 +177,6 @@ alias nid='npm i -D'
 alias nu='npm uninstall'
 
 alias s='subl .'
-alias a='atom .'
 alias c='code .'
 
 alias g='git'
@@ -187,10 +189,18 @@ alias gci='git commit'
 alias d='git diff'
 alias m='git checkout master'
 alias o='git checkout'
+alias ob='git checkout -b'
+alias a='git add --all; git status --short'
+alias cm='git_commit_with_arguments_message'
+
+git_commit_with_arguments_message() {
+  git commit --message "$*"
+}
 
 # ghq setting
 alias glp='cd $(ghq list -p | peco)'
 alias gqp='cd $(ghq list -p | peco)'
+alias get='ghq get -p'
 
 # gh-page setting
 alias ghp='gh-open $(ghq list -p | peco)'
@@ -301,3 +311,71 @@ bindkey '^x' peco-find
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/yuki/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuki/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/yuki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuki/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+###-begin-npm-completion-###
+#
+# npm command completion script
+#
+# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
+# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
+#
+
+if type complete &>/dev/null; then
+  _npm_completion () {
+    local words cword
+    if type _get_comp_words_by_ref &>/dev/null; then
+      _get_comp_words_by_ref -n = -n @ -n : -w words -i cword
+    else
+      cword="$COMP_CWORD"
+      words=("${COMP_WORDS[@]}")
+    fi
+
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           npm completion -- "${words[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+    if type __ltrim_colon_completions &>/dev/null; then
+      __ltrim_colon_completions "${words[cword]}"
+    fi
+  }
+  complete -o default -F _npm_completion npm
+elif type compdef &>/dev/null; then
+  _npm_completion() {
+    local si=$IFS
+    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
+                 COMP_LINE=$BUFFER \
+                 COMP_POINT=0 \
+                 npm completion -- "${words[@]}" \
+                 2>/dev/null)
+    IFS=$si
+  }
+  compdef _npm_completion npm
+elif type compctl &>/dev/null; then
+  _npm_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       npm completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _npm_completion npm
+fi
+###-end-npm-completion-###
+
+source ~/.yarn-completion/yarn-completion.plugin.zsh
