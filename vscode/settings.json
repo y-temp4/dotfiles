@@ -1,5 +1,4 @@
 {
-  "window.zoomLevel": 0,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
@@ -7,13 +6,20 @@
   "css.validate": false,
   "scss.validate": false,
   "[css]": {
-    "editor.formatOnSave": false
+    "editor.tabSize": 2
+    // "editor.formatOnSave": false
   },
   "[scss]": {
-    "editor.tabSize": 2,
-    "editor.formatOnSave": false
+    "editor.tabSize": 2
+  },
+  "[postcss]": {
+    "editor.tabSize": 2
   },
   "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -21,15 +27,13 @@
     "editor.tabSize": 2
   },
   "[typescriptreact]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[vue]": {
     "editor.tabSize": 2,
-    "togglequotes.chars": ["\"", "'", "`"],
-    "editor.defaultFormatter": "octref.vetur"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "octref.vetur",
+    "togglequotes.chars": ["\"", "'", "`"]
   },
   "[ruby]": {
     "editor.tabSize": 2
@@ -86,15 +90,6 @@
   "python.jediEnabled": false,
   "explorer.confirmDragAndDrop": false,
   "vsicons.dontShowNewVersionMessage": true,
-  "change-case.js": ["snake_case", "camelCase", "PascalCase", "CONST_CASE"],
-  "change-case.ts": ["snake_case", "camelCase", "PascalCase", "CONST_CASE"],
-  "change-case.vue": [
-    "snake_case",
-    "camelCase",
-    "PascalCase",
-    "CONST_CASE",
-    "param-case"
-  ],
   "editor.rulers": [80, 100],
   "terminal.integrated.fontFamily": "Ricty",
   "terminal.integrated.fontSize": 13,
@@ -113,10 +108,52 @@
   ],
   "workbench.sideBar.location": "left",
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Monokai",
   "workbench.iconTheme": "vscode-icons",
   "workbench.editor.focusRecentEditorAfterClose": false,
   "tabnine.experimentalAutoImports": true,
   "vetur.format.defaultFormatter.html": "prettier",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "python.languageServer": "Microsoft",
+  "python.showStartPage": false,
+  "change-case.default": [
+    "snake_case",
+    "camelCase",
+    "PascalCase",
+    "CONST_CASE",
+    "param-case"
+  ],
+  "change-case.ts": [
+    "snake_case",
+    "camelCase",
+    "PascalCase",
+    "CONST_CASE",
+    "param-case"
+  ],
+  "git.autofetch": true,
+  "extensions.ignoreRecommendations": false,
+  "editor.columnSelection": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": [],
+  "editor.accessibilitySupport": "off",
+  "go.toolsManagement.autoUpdate": true,
+  "cSpell.customDictionaries": {
+    "custom-words": {
+      "name": "my-words", // name of dictionary (should be unique)
+      "description": "These are the words I use in all projects.",
+      "path": "~/.cSpell/custom-words.txt",
+      "addWords": true // Add Word to User Dictionary will add words to this file.
+    }
+  },
+  "vscode-edge-devtools.mirrorEdits": true,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
+  "workbench.colorTheme": "Monokai"
 }
