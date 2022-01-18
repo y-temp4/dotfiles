@@ -3,14 +3,18 @@
 	name = y-temp4
 [core]
   excludesfile = /Users/yuki/.gitignore_global
+  quotepath = false
 [color]
   ui = auto
 [push]
   default = simple
 [pull]
   rebase = false
+  ff = only
 [fetch]
   prune = true
+[merge]
+  ff = false
 [alias]
   aa = add -A
   ad = add
@@ -52,6 +56,8 @@
 [ghq]
   root = ~/.go/src
   root = ~/.ghq
+[filter "spacify"]
+  clean = expand --tabs=2 --initial
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
