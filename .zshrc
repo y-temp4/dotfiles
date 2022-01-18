@@ -158,8 +158,17 @@ git_commit_with_arguments_message() {
   git commit --message "$*"
 }
 
+# https://github.com/cappyzawa/gh-ghq-cd
+function glp() {
+  selected="$(ghq list --full-path | fzf --reverse --preview "bat --color=always {1}/README.md")"
+  [ -n "${selected}" ] || exit 1
+  \cd ${selected}
+  $SHELL
+}
+
 # ghq setting
-alias glp='cd $(ghq list -p | peco)'
+alias glp='glp'
+# alias glp='cd $(ghq list --full-path | fzf --reverse --preview "bat --color=always {1}/README.md")'
 alias gqp='cd $(ghq list -p | peco)'
 alias get='ghq get -p'
 
@@ -222,9 +231,6 @@ esac
 
 # vim:set ft=zsh:
 
-# for zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 # Do not register duplicate paths
 typeset -U path PATH
 
@@ -266,18 +272,16 @@ zle -N peco-find
 # bindkey '^f' peco-find
 bindkey '^x' peco-find
 
+# for zsh-completions
+# fpath=(~/.zsh/completions $fpath)
+
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [[ -f /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/yuki/.anyenv/envs/ndenv/versions/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/yuki/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/yuki/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/yuki/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/yuki/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
 ###-begin-npm-completion-###
 #
 # npm command completion script
@@ -340,3 +344,9 @@ fi
 ###-end-npm-completion-###
 
 source ~/.yarn-completion/yarn-completion.plugin.zsh
+
+# cd した時のhook
+# iTerm のタブ名をpathに変更
+# https://qiita.com/hasehiro0828/items/d8f1dd2a72c7999c9b76#iterm%E3%81%AE%E8%A8%AD%E5%AE%9A
+echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
+function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
